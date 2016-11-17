@@ -1,0 +1,10 @@
+C:\repos\TwentyQuestions\TwentyQuestions\bin\Debug\TwentyQuestions.exe.config
+C:\repos\TwentyQuestions\TwentyQuestions\bin\Debug\TwentyQuestions.exe
+C:\repos\TwentyQuestions\TwentyQuestions\bin\Debug\TwentyQuestions.pdb
+C:\repos\TwentyQuestions\TwentyQuestions\obj\Debug\TwentyQuestions.csprojResolveAssemblyReference.cache
+C:\repos\TwentyQuestions\TwentyQuestions\obj\Debug\TwentyQuestions.Form1.resources
+C:\repos\TwentyQuestions\TwentyQuestions\obj\Debug\TwentyQuestions.Properties.Resources.resources
+C:\repos\TwentyQuestions\TwentyQuestions\obj\Debug\TwentyQuestions.csproj.GenerateResource.Cache
+C:\repos\TwentyQuestions\TwentyQuestions\obj\Debug\TwentyQuestions.exe
+C:\repos\TwentyQuestions\TwentyQuestions\obj\Debug\TwentyQuestions.pdb
+C:\repos\TwentyQuestions\TwentyQuestions\obj\Debug\TwentyQuestions.AddNewItem.resources
