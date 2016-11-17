@@ -24,10 +24,10 @@ namespace TwentyQuestions
         {
             root = new Question();
             root.question = "Is it hot?";
-            root.yes = new Question();
-            root.yes.question = "Is it coffee?";
-            root.no = new Question();
-            root.no.question = "Is it tea?";
+            //root.yes = new Question();
+            //root.yes.question = "Is it coffee?";
+            //root.no = new Question();
+            //root.no.question = "Is it tea?";
 
             current = root;
             QuestionLabel.Text = current.question; 
@@ -35,40 +35,68 @@ namespace TwentyQuestions
 
         private void YesButton_Click(object sender, EventArgs e)
         {
-            if(current.IsLeaf())
+            if(current.IsLeaf()) //correct guess, end of the line
             {
-                if (MessageBox.Show("I win! Do you want to play again?", "Twenty Q", MessageBoxButtons.YesNo) == DialogResult.No)
+                if (MessageBox.Show("I win! Do you want to play again?", "Twenty Q", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    this.DialogResult = DialogResult.Cancel;
-                    this.Close();
+                    //relaunch game?
+                    current = root;
+                    QuestionLabel.Text = current.question;
+                    
                 }
                 else
                 {
-                    //relaunch game?   
+                    //shut it down!
+                    this.Close();
                 }
             }
-            else
+            else //correct guess, not a leaf
             {
-                current = new Question( )
+                // move down the yes branch
+                current = current.yes;
+                QuestionLabel.Text = current.question;
             }
         }
 
         private void NoButton_Click(object sender, EventArgs e)
         {
-            if(current.IsLeaf())
+            if(current.IsLeaf()) //wrong guess, end of the line
             {
+                // ask user for answer they were thinking of, and better question
+                // collect user data
+                // use data to build new question to replace 
+                AddNewItem newItem = new AddNewItem();
+                if (newItem.ShowDialog() == DialogResult.OK)
+                {
 
+                }
             }
-            //am I at a leaf?
-            //no: ask the next question
-            //yes: new thing... go learn stuff
-            // Do you want to play again?
-
-            AddNewItem add = new AddNewItem();
-            if(add.ShowDialog() == DialogResult.OK)
+            else    
             {
-
+                current = current.no;
+                QuestionLabel.Text = current.question;
             }
+        }
+
+        public void addQuestion(string userHintQ, string userAnswer)
+        {
+
+            // grabbing user input from form 2
+            // manipulate tree
+            string oldQ = current.question;
+            current.question = userHintQ;
+            current.no = new Question(oldQ);
+            current.yes = new Question(userAnswer);
+
+            QuestionLabel.Text = current.question;
+
+            //////////////////////////////////////
+            //Question tmp = new Question(current);
+
+
+
+
+            //////////////////////////////////////
         }
     }
 }
